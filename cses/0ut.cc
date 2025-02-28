@@ -5,29 +5,34 @@
 using namespace std;
 
 void run() {
-  int n;
-  cin >> n;
+  int n, x;
+  cin >> n >> x;
 
-  vector<int> dp(n+1, 1e9);
-  dp[0] = 0;
+  vector<int> page(n), price(n);
+  
+  for(int &i : price) cin >> i;
+  for(int &i : page) cin >> i;
 
-  for(int i=1 ; i<=n ; i++){
-    int tmp = i;
+  vector<vector<int>> dp(n+1, vector<int>(x+1, 0));
 
-    while(tmp > 0){
-      int d = tmp % 10;
-      tmp /= 10;
+  for(int i=1; i<=n ; i++){
+    for(int j=0; j<=x ; j++){
+      dp[i][j] = dp[i-1][j];
 
-      if(d > 0) dp[i] = min(dp[i], 1 + dp[i-d]);
+      if(j >= price[i-1]){
+        dp[i][j] = max(dp[i][j], dp[i-1][j-price[i-1]] + page[i-1]);
+      }
     }
   }
-  
-  cout << dp[n];
+
+  cout << dp[n][x] << endl;
+
+  return;
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    run();
-    return 0;
+  ios_base::sync_with_stdio(false);
+  cin.tie(nullptr);
+  run();
+  return 0;
 }

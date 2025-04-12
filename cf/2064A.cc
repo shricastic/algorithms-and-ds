@@ -5,20 +5,19 @@
 using namespace std;
 
 void run() {
-  // Your code here
   int t;
   cin >> t;
 
-  while(t--){
+  while (t--) {
     string s;
     cin >> s;
 
-    bool b = false;
-    for(int i=0 ; i<s.size()-1 ; i++){
-      if(s[i] == s[i+1]) b = true;
+    if (s.size() >= 2 && s[s.size() - 2] == 'u' && s[s.size() - 1] == 's') {
+      s = s.substr(0, s.size() - 2);
+      s = s+'i';
     }
 
-    b ? cout <<'1' << endl : cout << s.size() << endl;
+    cout << s << '\n';
   }
 }
 

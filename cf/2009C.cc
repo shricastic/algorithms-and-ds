@@ -11,22 +11,19 @@ void run() {
   cin >> t;
 
   while(t--) {
-    int n;
-    cin >> n;
+    int x, y, k, moves;
+    cin >> x >> y >> k;
 
-    vector<pair<int, int>> p;
+    int min_x = (x + k - 1)/k;
+    int min_y = (y + k - 1)/k;
 
-    for(int i=0 ; i<n ; i++){
-      int x, y;
-      cin >> x >> y;
-      p.push_back(pair(x, y));
+    if(min_y<min_x){
+      moves = 2 * min_x - 1;
+    } else {
+      moves = 2 * min_y;
     }
 
-
-
-
-
-    
+    cout << moves << endl;
   }
 }
 

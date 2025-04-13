@@ -5,28 +5,22 @@
 using namespace std;
 
 void run() {
-  
-  // Shri's code here
-  int t;
+  // Your code here
+  int t; 
   cin >> t;
 
-  while(t--) {
-    int n;
+  while(t--){
+    int n; 
     cin >> n;
+    int cnt = 0;
 
-    vector<pair<int, int>> p;
-
-    for(int i=0 ; i<n ; i++){
-      int x, y;
-      cin >> x >> y;
-      p.push_back(pair(x, y));
+    for(int i=1 ; i<n ; i++){
+      for(int j=0 ; j<n ; j++){
+        if(n-j == i) cnt++; 
+      }
     }
 
-
-
-
-
-    
+    cout << cnt << endl;
   }
 }
 

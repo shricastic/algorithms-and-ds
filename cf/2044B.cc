@@ -5,28 +5,19 @@
 using namespace std;
 
 void run() {
-  
-  // Shri's code here
-  int t;
+  int t; 
   cin >> t;
 
-  while(t--) {
-    int n;
-    cin >> n;
-
-    vector<pair<int, int>> p;
-
-    for(int i=0 ; i<n ; i++){
-      int x, y;
-      cin >> x >> y;
-      p.push_back(pair(x, y));
+  while(t--){
+    string s;
+    cin >> s;
+    reverse(a.begin(), a.end());
+    for(int i=0 ; i<s.size() ; i++){
+      if(s[i] == 'p') s[i] = 'q'; 
+      if(s[i] == 'q') s[i] = 'p';
     }
 
-
-
-
-
-    
+    cout << s << endl;
   }
 }
 

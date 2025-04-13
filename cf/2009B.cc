@@ -13,20 +13,21 @@ void run() {
   while(t--) {
     int n;
     cin >> n;
+    deque<int> d;
 
-    vector<pair<int, int>> p;
+    while(n--){
+      string s;
+      cin >> s;
 
-    for(int i=0 ; i<n ; i++){
-      int x, y;
-      cin >> x >> y;
-      p.push_back(pair(x, y));
+      for(int i=0 ; i<s.size() ; i++){
+        if(s[i] == '#') d.push_front(i+1);
+      }
     }
 
-
-
-
-
-    
+    for(int i : d){
+      cout << i << " ";
+    }
+    cout << endl;
   }
 }
 

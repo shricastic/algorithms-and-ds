@@ -5,28 +5,18 @@
 using namespace std;
 
 void run() {
-  
-  // Shri's code here
-  int t;
+  int t; 
   cin >> t;
 
-  while(t--) {
-    int n;
-    cin >> n;
+  while(t--){
+    int a, b, res, num;
+    cin >> a >> b;
 
-    vector<pair<int, int>> p;
+    num = (a + b)/ 2;
 
-    for(int i=0 ; i<n ; i++){
-      int x, y;
-      cin >> x >> y;
-      p.push_back(pair(x, y));
-    }
-
-
-
-
-
+    res = (num-a) + (b-num);
     
+    cout << res << endl;
   }
 }
 
